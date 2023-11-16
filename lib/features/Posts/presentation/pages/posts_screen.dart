@@ -1,8 +1,9 @@
-import 'package:clean_archticture/DI/dependency_injection.dart';
 import 'package:clean_archticture/ui/posts/view_model/posts_cubit.dart';
 import 'package:clean_archticture/ui/posts/view_model/posts_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../../../core/DI/dependency_injection.dart';
 
 class PostsScreen extends StatelessWidget {
   const PostsScreen({Key? key}) : super(key: key);

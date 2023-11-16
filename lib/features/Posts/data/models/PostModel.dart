@@ -1,16 +1,19 @@
+import 'package:clean_archticture/features/Posts/domain/entities/post_entity.dart';
+import 'package:equatable/equatable.dart';
 import 'package:hive/hive.dart';
 part 'PostModel.g.dart';
 /// userId : 1
 /// id : 1
 /// title : "delectus aut autem"
 /// completed : false
+
 @HiveType(typeId: 0)
-class PostModel extends HiveObject{
+class PostModel extends PostEntity with EquatableMixin,HiveObjectMixin{
   PostModel({
-      this.userId, 
-      this.id, 
-      this.title, 
-      this.completed,});
+      this.userId,
+      this.id,
+      super.title,
+      super.completed,});
 
   PostModel.fromJson(dynamic json) {
     userId = json['userId'];
@@ -22,10 +25,7 @@ class PostModel extends HiveObject{
   int? userId;
   @HiveField(1)
   int? id;
-  @HiveField(2)
-  String? title;
-  @HiveField(3)
-  bool? completed;
+
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
@@ -35,5 +35,9 @@ class PostModel extends HiveObject{
     map['completed'] = completed;
     return map;
   }
+
+  @override
+  // TODO: implement props
+  List<Object?> get props => [title];
 
 }

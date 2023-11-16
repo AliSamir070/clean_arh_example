@@ -1,5 +1,5 @@
-import 'package:clean_archticture/Features/route_manager.dart';
-import 'package:clean_archticture/Features/router.dart';
+import 'package:clean_archticture/core/utils/route_manager.dart';
+import 'package:clean_archticture/config/routes/router.dart';
 import 'package:flutter/material.dart';
 
 class MyApp extends StatelessWidget {

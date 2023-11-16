@@ -1,20 +1,19 @@
-import 'package:clean_archticture/data/repository/dao_repository/posts_dao/post_api_datasource.dart';
+import 'package:clean_archticture/features/Posts/data/data_sources/post_datasource.dart';
+import 'package:clean_archticture/features/Posts/data/models/PostModel.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:hive/hive.dart';
 import 'package:injectable/injectable.dart';
 
-import '../../../api_manager/api_manager.dart';
-import '../../../model/PostModel.dart';
-import '../../../utils/error_handler.dart';
-import '../../../utils/error_responsecode.dart';
+import '../../../../core/api/api_manager.dart';
+import '../../../../core/error/error_handler.dart';
+import '../../../../core/error/error_responsecode.dart';
 
 @Named("api")
-@Singleton(as: PostsDataSource)
-class PostsAPiDataSourceImplementation implements PostsDataSource{
-
+@Singleton(as: PostsDatasource)
+class PostsApiDao implements PostsDatasource{
   @override
-  Future<Either<List<PostModel>, String>> FetchPosts() async{
+  Future<Either<List<PostModel>, String>> GetPosts() async{
     try{
       Response? response = await ApiManager.GetPosts();
       if(response?.statusCode == 200){

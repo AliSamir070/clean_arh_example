@@ -44,6 +44,8 @@ dependencies:
   hive: ^2.2.3
   hive_generator: ^2.0.1
   path_provider: ^2.1.1
+  equatable: ^2.0.5
+  pretty_dio_logger: ^1.3.1
   # add injectable to your dependencies
   injectable:
   # add get_it

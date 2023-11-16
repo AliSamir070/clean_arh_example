@@ -1,6 +1,6 @@
 
-import '../../Features/strings_manager.dart';
-import 'error_handler.dart';
+import '../../core/utils/strings_manager.dart';
+import '../../core/error/error_handler.dart';
 
 class ErrorResponseCode{
   static String CheckError(int? code){

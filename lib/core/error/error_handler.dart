@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 
-import '../../Features/strings_manager.dart';
+import '../utils/strings_manager.dart';
 
 
 
